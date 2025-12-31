@@ -52,5 +52,5 @@ Allow: /
 User-agent: ia_archiver
 Allow: /
 
-Sitemap: https://plainlanguage.dev/sitemap.xml
+Sitemap: https://plainlanguage.wiki/sitemap.xml
 
