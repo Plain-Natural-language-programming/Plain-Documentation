@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Classes - Plain Language Object-Oriented Programming Guide</title>
+    
+    <meta name="description" content="Learn object-oriented programming with Plain Language classes. Natural English syntax for class declaration, methods, inheritance, and object instantiation with examples.">
+    <meta name="keywords" content="plain language classes, object-oriented programming, OOP, class declaration, natural language classes, programming classes, .pln classes">
+    <meta name="author" content="Plain Language">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://plainlanguage.dev/classes.html">
+    <meta property="og:title" content="Plain Language Classes - Object-Oriented Programming Guide">
+    <meta property="og:description" content="Learn class declaration and OOP in Plain Language.">
+    <meta property="og:image" content="https://plainlanguage.dev/favicon.svg">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="https://plainlanguage.dev/classes.html">
+    <meta name="twitter:title" content="Plain Language Classes">
+    <meta name="twitter:description" content="Object-oriented programming with Plain Language.">
+    
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="alternate icon" href="assets/images/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/images/favicon.svg">
+    
+    <link rel="canonical" href="https://plainlanguage.dev/classes.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script>
+        // Apply theme immediately to prevent flash
+        (function() {
+            function getCookie(name) {
+                const value = `; ${document.cookie}`;
+                const parts = value.split(`; ${name}=`);
+                if (parts.length === 2) return parts.pop().split(';').shift();
+                return null;
+            }
+            const savedTheme = getCookie('plain-theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+</head>
+<body>
+    <div class="page">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-header">
+                    <svg class="bird-icon" width="64" height="64" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                            <ellipse cx="16" cy="18" rx="6" ry="4.5" fill="#9CA3AF" opacity="0.9"/>
+                            <circle cx="10" cy="14" r="4" fill="#9CA3AF" opacity="0.9"/>
+                            <circle cx="9.5" cy="13.5" r="1.2" fill="white"/>
+                            <circle cx="9.5" cy="13.5" r="0.6" fill="#6B7280"/>
+                            <path d="M6.5 14L5 14.8L6.8 14.4Z" fill="#9CA3AF" opacity="0.8"/>
+                            <ellipse cx="14" cy="16.5" rx="3.5" ry="2.5" fill="#D1D5DB" opacity="0.7" transform="rotate(-15 14 16.5)"/>
+                            <ellipse cx="15.5" cy="19" rx="3" ry="2" fill="#D1D5DB" opacity="0.6" transform="rotate(10 15.5 19)"/>
+                        </g>
+                    </svg>
+                    <div>
+                        <div class="brand-name">Plain Language</div>
+                        <div class="brand-meta">Natural language programming</div>
+                    </div>
+                </div>
+            </div>
+            <p class="brand-summary">
+                Write programs in plain English. Plain Language transpiles to Python and runs on the Python ecosystem.
+            </p>
+            <div class="sidebar-actions">
+                <a class="btn primary" href="quickstart.html">Get started</a>
+            </div>
+            <div class="search-wrapper">
+                <input id="docSearch" class="search-box" type="search" placeholder="Search the docs">
+                <button type="button" class="search-clear" id="searchClear" aria-label="Clear search" style="display: none;">x</button>
+            </div>
+
+            <nav class="nav-menu">
+                <div class="nav-group">
+                    <p class="nav-title">Getting Started</p>
+                    <a class="nav-link" href="index.html">Overview</a>
+                    <a class="nav-link" href="install.html">Install</a>
+                    <a class="nav-link" href="quickstart.html">Quickstart</a>
+                    <a class="nav-link" href="cli.html">CLI</a>
+                    <a class="nav-link" href="project-layout.html">Project layout</a>
+                </div>
+                <div class="nav-group">
+                    <p class="nav-title">Language Reference</p>
+                    <a class="nav-link" href="reference.html">Reference map</a>
+                    <a class="nav-link" href="syntax.html">Syntax</a>
+                    <a class="nav-link" href="variables.html">Variables</a>
+                    <a class="nav-link" href="functions.html">Functions</a>
+                    <a class="nav-link" href="conditionals.html">Conditionals</a>
+                    <a class="nav-link" href="loops.html">Loops</a>
+                    <a class="nav-link" href="collections.html">Collections</a>
+                    <a class="nav-link" href="strings.html">Strings</a>
+                    <a class="nav-link" href="classes.html">Classes</a>
+                    <a class="nav-link" href="async.html">Async</a>
+                    <a class="nav-link" href="errors.html">Errors</a>
+                    <a class="nav-link" href="generators.html">Generators</a>
+                    <a class="nav-link" href="context.html">Context managers</a>
+                    <a class="nav-link" href="api.html">API endpoints</a>
+                    <a class="nav-link" href="interop.html">Python interop</a>
+                </div>
+                <div class="nav-group">
+                    <p class="nav-title">Resources</p>
+                    <a class="nav-link" href="examples.html">Examples</a>
+                    <a class="nav-link" href="faq.html">FAQ</a>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle dark/light mode">
+                <svg class="theme-icon sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="theme-icon moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+
+            <header class="page-hero">
+                <div>
+                    <p class="eyebrow">Language Reference</p>
+                    <h1>Classes</h1>
+                    <p class="lead">Model objects with classes, methods, and inheritance using plain statements.</p>
+                    <div class="hero-actions">
+                        <a class="btn primary" href="async.html">Next: async</a>
+                        <a class="btn secondary" href="strings.html">Strings</a>
+                    </div>
+                </div>
+                <div class="page-hero-card">
+                    <h3>Class essentials</h3>
+                    <ul class="page-hero-list">
+                        <li>Create classes with <code>create a class named</code>.</li>
+                        <li>Add methods with <code>create a method named</code>.</li>
+                        <li>Extend with <code>extends</code>.</li>
+                    </ul>
+                </div>
+            </header>
+
+            <section class="doc-section">
+                <h2>Define classes</h2>
+                <p>Declare classes and add methods inside the class block.</p>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="filename">classes.pln</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code>create a class named Person
+    create a method named greet in class Person that takes nothing and returns "Hello"
+
+create a class named Student that extends Person
+    create a method named study in class Student that takes nothing and returns "Studying"</code></pre>
+                </div>
+            </section>
+
+            <section class="doc-section">
+                <h2>Working with instances</h2>
+                <p>Once the class is defined, use normal Python-style calls for instantiation.</p>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="filename">instances.pln</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code>set student to Student()
+print student.greet()
+print student.study()</code></pre>
+                </div>
+            </section>
+
+            <section class="doc-section">
+                <h2>Class tips</h2>
+                <ul class="bullets">
+                    <li>Use classes to bundle data with behavior.</li>
+                    <li>Keep class names capitalized.</li>
+                    <li>Prefer composition for large systems.</li>
+                </ul>
+            </section>
+
+            <footer class="doc-footer">
+                <p>Plain Language Documentation - Built for clarity, powered by Python.</p>
+                <div class="footer-links">
+                    <a href="async.html">Async</a>
+                    <a href="errors.html">Errors</a>
+                    <a href="interop.html">Python interop</a>
+                    <a href="examples.html">Examples</a>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <script src="assets/javascript/script.js"></script>
+</body>
+</html>

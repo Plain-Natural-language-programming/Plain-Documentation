@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reference Map - Plain Language Complete Language Reference</title>
+    
+    <meta name="description" content="Complete Plain Language reference map. Syntax, functions, variables, classes, async, error handling, and all language features in one comprehensive guide.">
+    <meta name="keywords" content="plain language reference, plain language syntax, programming language reference, .pln reference, natural language programming reference, plain language documentation">
+    <meta name="author" content="Plain Language">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://plainlanguage.dev/reference.html">
+    <meta property="og:title" content="Plain Language Reference Map - Complete Language Reference">
+    <meta property="og:description" content="Complete reference for Plain Language programming. All syntax, functions, and features documented.">
+    <meta property="og:image" content="https://plainlanguage.dev/favicon.svg">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="https://plainlanguage.dev/reference.html">
+    <meta name="twitter:title" content="Plain Language Reference Map">
+    <meta name="twitter:description" content="Complete reference for Plain Language programming.">
+    
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="alternate icon" href="assets/images/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/images/favicon.svg">
+    
+    <link rel="canonical" href="https://plainlanguage.dev/reference.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script>
+        // Apply theme immediately to prevent flash
+        (function() {
+            function getCookie(name) {
+                const value = `; ${document.cookie}`;
+                const parts = value.split(`; ${name}=`);
+                if (parts.length === 2) return parts.pop().split(';').shift();
+                return null;
+            }
+            const savedTheme = getCookie('plain-theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+</head>
+<body>
+    <div class="page">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-header">
+                    <svg class="bird-icon" width="64" height="64" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                            <ellipse cx="16" cy="18" rx="6" ry="4.5" fill="#9CA3AF" opacity="0.9"/>
+                            <circle cx="10" cy="14" r="4" fill="#9CA3AF" opacity="0.9"/>
+                            <circle cx="9.5" cy="13.5" r="1.2" fill="white"/>
+                            <circle cx="9.5" cy="13.5" r="0.6" fill="#6B7280"/>
+                            <path d="M6.5 14L5 14.8L6.8 14.4Z" fill="#9CA3AF" opacity="0.8"/>
+                            <ellipse cx="14" cy="16.5" rx="3.5" ry="2.5" fill="#D1D5DB" opacity="0.7" transform="rotate(-15 14 16.5)"/>
+                            <ellipse cx="15.5" cy="19" rx="3" ry="2" fill="#D1D5DB" opacity="0.6" transform="rotate(10 15.5 19)"/>
+                        </g>
+                    </svg>
+                    <div>
+                        <div class="brand-name">Plain Language</div>
+                        <div class="brand-meta">Natural language programming</div>
+                    </div>
+                </div>
+            </div>
+            <p class="brand-summary">
+                Write programs in plain English. Plain Language transpiles to Python and runs on the Python ecosystem.
+            </p>
+            <div class="sidebar-actions">
+                <a class="btn primary" href="quickstart.html">Get started</a>
+            </div>
+            <div class="search-wrapper">
+                <input id="docSearch" class="search-box" type="search" placeholder="Search the docs">
+                <button type="button" class="search-clear" id="searchClear" aria-label="Clear search" style="display: none;">x</button>
+            </div>
+
+            <nav class="nav-menu">
+                <div class="nav-group">
+                    <p class="nav-title">Getting Started</p>
+                    <a class="nav-link" href="index.html">Overview</a>
+                    <a class="nav-link" href="install.html">Install</a>
+                    <a class="nav-link" href="quickstart.html">Quickstart</a>
+                    <a class="nav-link" href="cli.html">CLI</a>
+                    <a class="nav-link" href="project-layout.html">Project layout</a>
+                </div>
+                <div class="nav-group">
+                    <p class="nav-title">Language Reference</p>
+                    <a class="nav-link" href="reference.html">Reference map</a>
+                    <a class="nav-link" href="syntax.html">Syntax</a>
+                    <a class="nav-link" href="variables.html">Variables</a>
+                    <a class="nav-link" href="functions.html">Functions</a>
+                    <a class="nav-link" href="conditionals.html">Conditionals</a>
+                    <a class="nav-link" href="loops.html">Loops</a>
+                    <a class="nav-link" href="collections.html">Collections</a>
+                    <a class="nav-link" href="strings.html">Strings</a>
+                    <a class="nav-link" href="classes.html">Classes</a>
+                    <a class="nav-link" href="async.html">Async</a>
+                    <a class="nav-link" href="errors.html">Errors</a>
+                    <a class="nav-link" href="generators.html">Generators</a>
+                    <a class="nav-link" href="context.html">Context managers</a>
+                    <a class="nav-link" href="api.html">API endpoints</a>
+                    <a class="nav-link" href="interop.html">Python interop</a>
+                </div>
+                <div class="nav-group">
+                    <p class="nav-title">Resources</p>
+                    <a class="nav-link" href="examples.html">Examples</a>
+                    <a class="nav-link" href="faq.html">FAQ</a>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle dark/light mode">
+                <svg class="theme-icon sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="theme-icon moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+
+            <header class="page-hero">
+                <div>
+                    <p class="eyebrow">Language Reference</p>
+                    <h1>Reference map</h1>
+                    <p class="lead">A quick map of Plain Language concepts, syntax patterns, and the pages to dive deeper.</p>
+                    <div class="hero-actions">
+                        <a class="btn primary" href="syntax.html">Start with syntax</a>
+                        <a class="btn secondary" href="examples.html">See examples</a>
+                    </div>
+                </div>
+                <div class="page-hero-card">
+                    <h3>What to remember</h3>
+                    <ul class="page-hero-list">
+                        <li>Each line is a statement.</li>
+                        <li>Indentation defines blocks.</li>
+                        <li>Python lines pass through.</li>
+                    </ul>
+                </div>
+            </header>
+
+            <section class="doc-section">
+                <h2>Core ideas</h2>
+                <div class="reference-grid">
+                    <div>
+                        <h3>Statements</h3>
+                        <ul>
+                            <li>Write complete sentences.</li>
+                            <li>Start with verbs like <code>create</code> or <code>set</code>.</li>
+                            <li>Use clear variable names.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Blocks</h3>
+                        <ul>
+                            <li><code>do</code> opens a block.</li>
+                            <li>Indentation closes the block.</li>
+                            <li>Use <code>otherwise</code> for else cases.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Interop</h3>
+                        <ul>
+                            <li>Valid Python passes through.</li>
+                            <li>Import modules directly.</li>
+                            <li>Mix plain and Python lines.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="doc-section">
+                <h2>Reference topics</h2>
+                <p>Jump straight to the topic you need, each page has deep patterns and examples.</p>
+                <div class="doc-card-grid">
+                    <div class="doc-card">
+                        <h3>Syntax</h3>
+                        <p>Indentation, comments, literals, and structural rules.</p>
+                        <a class="btn secondary" href="syntax.html">Open syntax</a>
+                    </div>
+                    <div class="doc-card">
+                        <h3>Data and variables</h3>
+                        <p>Assignments, lists, dictionaries, and typing patterns.</p>
+                        <a class="btn secondary" href="variables.html">Open variables</a>
+                    </div>
+                    <div class="doc-card">
+                        <h3>Functions and flow</h3>
+                        <p>Functions, conditionals, loops, and control flow.</p>
+                        <a class="btn secondary" href="functions.html">Open functions</a>
+                    </div>
+                    <div class="doc-card">
+                        <h3>Advanced</h3>
+                        <p>Async, generators, context managers, and APIs.</p>
+                        <a class="btn secondary" href="async.html">Open async</a>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="doc-footer">
+                <p>Plain Language Documentation - Built for clarity, powered by Python.</p>
+                <div class="footer-links">
+                    <a href="syntax.html">Syntax</a>
+                    <a href="variables.html">Variables</a>
+                    <a href="functions.html">Functions</a>
+                    <a href="examples.html">Examples</a>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <script src="assets/javascript/script.js"></script>
+</body>
+</html>

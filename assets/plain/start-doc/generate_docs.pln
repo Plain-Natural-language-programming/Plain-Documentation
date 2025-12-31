@@ -1,0 +1,11 @@
+
+create a function named serve_documentation that takes nothing and does
+    create an api endpoint at / that get and returns send_file("index.html")
+    create an api endpoint at /styles.css that get and returns send_file("styles.css")
+    create an api endpoint at /script.js that get and returns send_file("script.js")
+    create an api endpoint at /<path:filename> that get and returns send_file(filename)
+    print "Documentation server running at http://localhost:5000"
+    print "Press Ctrl+C to stop"
+
+call serve_documentation
+
