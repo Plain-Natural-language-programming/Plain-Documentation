@@ -724,6 +724,59 @@ li code,
     margin-bottom: 24px;
 }
 
+/* Page Table of Contents */
+.page-toc {
+    padding: 32px 120px 0;
+    background: var(--bg-secondary);
+}
+
+.page-toc-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 20px 24px;
+    box-shadow: var(--shadow-sm);
+}
+
+.page-toc-title {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    color: var(--ink-tertiary);
+    margin-bottom: 12px;
+}
+
+.page-toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+}
+
+.page-toc-list a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--border-light);
+    background: var(--bg-tertiary);
+    color: var(--ink-secondary);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.15s ease;
+}
+
+.page-toc-list a:hover {
+    color: var(--ink-primary);
+    border-color: var(--brand-secondary);
+    background: var(--bg-secondary);
+}
+
 /* Feature Grid */
 .feature-grid,
 .reference-grid,
@@ -1214,6 +1267,10 @@ body.reveal .doc-section.is-visible {
     .hero {
         padding: 90px 110px;
     }
+
+    .page-toc {
+        padding: 28px 100px 0;
+    }
 }
 
 @media (max-width: 1400px) {
@@ -1227,6 +1284,10 @@ body.reveal .doc-section.is-visible {
     
     .page-hero {
         padding: 70px 90px;
+    }
+
+    .page-toc {
+        padding: 28px 80px 0;
     }
 }
 
@@ -1246,6 +1307,10 @@ body.reveal .doc-section.is-visible {
     
     .doc-card-grid {
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .page-toc {
+        padding: 24px 64px 0;
     }
 }
 
@@ -1301,6 +1366,10 @@ body.reveal .doc-section.is-visible {
 
     .content > section {
         padding: 48px 40px;
+    }
+
+    .page-toc {
+        padding: 24px 40px 0;
     }
 
     .hero {
@@ -1433,6 +1502,19 @@ body.reveal .doc-section.is-visible {
         margin-bottom: 20px;
     }
 
+    .page-toc {
+        padding: 20px 32px 0;
+    }
+
+    .page-toc-card {
+        padding: 18px 20px;
+    }
+
+    .page-toc-list a {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+
     .code-block {
         margin: 24px 0;
         border-radius: var(--radius-md);
@@ -1522,6 +1604,10 @@ body.reveal .doc-section.is-visible {
 @media (max-width: 640px) {
     .content > section {
         padding: 32px 24px;
+    }
+
+    .page-toc {
+        padding: 16px 24px 0;
     }
 
     .hero {
@@ -1658,6 +1744,10 @@ body.reveal .doc-section.is-visible {
 
     .content > section {
         padding: 28px 20px;
+    }
+
+    .page-toc {
+        padding: 16px 20px 0;
     }
 
     .hero {

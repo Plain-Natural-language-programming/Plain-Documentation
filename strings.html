@@ -154,20 +154,21 @@
             </header>
 
             <section class="doc-section">
-                <h2>String literals</h2>
-                <p>Wrap text in quotes. Use descriptive variable names to keep intent clear.</p>
+                <h2>String literals and escapes</h2>
+                <p>Wrap text in quotes. Escape quotes and newlines with backslashes.</p>
                 <div class="code-block">
                     <div class="code-header">
                         <span class="filename">strings.pln</span>
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                     </div>
                     <pre><code>set title to "Plain Language"
-set message to "Hello, " + title</code></pre>
+set quote to "She said \"hello\""
+set message to "Line one\nLine two"</code></pre>
                 </div>
             </section>
 
             <section class="doc-section">
-                <h2>Say and tell shortcuts</h2>
+                <h2>Say shortcuts</h2>
                 <p><code>say</code> treats plain words as text, so you can speak quickly without extra quotes.</p>
                 <div class="code-block">
                     <div class="code-header">
@@ -182,6 +183,23 @@ say value of total</code></pre>
             </section>
 
             <section class="doc-section">
+                <h2>Concatenation and casting</h2>
+                <p>Join strings with <code>+</code>. Use <code>str()</code> when mixing in numbers or booleans.</p>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="filename">concat.pln</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code>set first_name to "Ada"
+set last_name to "Lovelace"
+set visits to 3
+set full_name to first_name + " " + last_name
+set line to "Hello, " + full_name + " (" + str(visits) + " visits)"
+print line</code></pre>
+                </div>
+            </section>
+
+            <section class="doc-section">
                 <h2>String checks</h2>
                 <p>Use readable checks for empty strings, prefixes, and suffixes.</p>
                 <div class="code-block">
@@ -191,16 +209,81 @@ say value of total</code></pre>
                     </div>
                     <pre><code>if name is empty then return "Missing name"
 if filename ends with ".json" then print "JSON file"
-if slug starts with "api-" then print "API route"</code></pre>
+if handle starts with "vip-" then print "Priority user"</code></pre>
+                </div>
+            </section>
+
+            <section class="doc-section">
+                <h2>Length and indexing</h2>
+                <p>Strings behave like sequences, so you can measure and index them.</p>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="filename">length.pln</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code>set name to "Atlas"
+set first_letter to name[0]
+set length to len(name)
+print "First letter: " + first_letter
+print "Length: " + str(length)</code></pre>
+                </div>
+            </section>
+
+            <section class="doc-section">
+                <h2>Splitting and joining</h2>
+                <p>Plain Language transpiles to Python, so Python string methods like <code>split</code> and <code>join</code> are available when you need them.</p>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="filename">split_join.pln</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code>set line to "alpha, beta, gamma"
+set tags to line.split(", ")
+set compact to "-".join(tags)
+print compact</code></pre>
+                </div>
+            </section>
+
+            <section class="doc-section">
+                <h2>Tutorial: normalize user input</h2>
+                <p>Clean up input with Python string helpers, then guard against empty values.</p>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="filename">normalize.pln</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code>set raw_name to ask "Enter your name"
+set name to raw_name.strip()
+if name is empty then do
+    print "Name required"
+    exit
+
+set display to name.title()
+print "Welcome, " + display</code></pre>
+                </div>
+            </section>
+
+            <section class="doc-section">
+                <h2>Tutorial: build a slug</h2>
+                <p>Create URL-friendly text with lowercasing and simple replacements.</p>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="filename">slug.pln</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code>set headline to "Fast Start Guide"
+set slug to headline.lower().replace(" ", "-")
+print slug</code></pre>
                 </div>
             </section>
 
             <section class="doc-section">
                 <h2>Readable formatting</h2>
                 <ul class="bullets">
-                    <li>Prefer explicit concatenation to keep behavior clear.</li>
-                    <li>Store reusable phrases in variables for consistency.</li>
-                    <li>Use <code>str()</code> when mixing non-string values.</li>
+                    <li>Prefer explicit concatenation so outputs stay predictable.</li>
+                    <li>Convert non-strings with <code>str()</code> before joining.</li>
+                    <li>Normalize comparisons with <code>lower()</code> when case does not matter.</li>
+                    <li>Store shared phrases in variables to keep copy consistent.</li>
                 </ul>
             </section>
 

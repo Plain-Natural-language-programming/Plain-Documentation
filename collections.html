@@ -168,6 +168,54 @@ print profile["role"]</code></pre>
             </section>
 
             <section class="doc-section">
+                <h2>Updating collections</h2>
+                <p>Append to lists and update dictionary keys with readable assignments.</p>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="filename">updates.pln</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code>create a list named users with ["Ada", "Lin"]
+create a dictionary named profile with {"name": "Ada", "role": "engineer"}
+set users to users + ["Sam"]
+set profile["team"] to "platform"
+print users[0]
+print profile["team"]</code></pre>
+                </div>
+            </section>
+
+            <section class="doc-section">
+                <h2>Membership and size</h2>
+                <p>Use <code>in</code> and <code>len()</code> to check membership and size.</p>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="filename">membership.pln</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code>create a list named users with ["Ada", "Lin", "Sam"]
+if "Ada" in users then print "User exists"
+set total to len(users)
+print "User count: " + str(total)</code></pre>
+                </div>
+            </section>
+
+            <section class="doc-section">
+                <h2>Nested collections</h2>
+                <p>Store structured records as dictionaries inside lists.</p>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="filename">nested.pln</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code>create a list named users with [
+    {"name": "Ada", "active": true},
+    {"name": "Lin", "active": false}
+]
+print users[0]["name"]</code></pre>
+                </div>
+            </section>
+
+            <section class="doc-section">
                 <h2>Readable list building</h2>
                 <p>Use natural language filters to build new lists from existing data.</p>
                 <div class="code-block">
@@ -176,6 +224,24 @@ print profile["role"]</code></pre>
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                     </div>
                     <pre><code>create a list of user["name"] for each user in users if user["active"] is true</code></pre>
+                </div>
+            </section>
+
+            <section class="doc-section">
+                <h2>Python collection helpers</h2>
+                <p>Valid Python lines pass through, so list and dictionary methods are available when needed.</p>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="filename">interop_collections.pln</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code>users = ["Ada", "Lin"]
+users.append("Sam")
+last_user = users.pop()
+profile = {"name": "Ada"}
+role = profile.get("role", "guest")
+print last_user
+print role</code></pre>
                 </div>
             </section>
 

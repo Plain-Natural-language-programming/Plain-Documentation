@@ -115,6 +115,77 @@ function updateActiveNav() {
     });
 }
 
+function slugify(text) {
+    return text
+        .toLowerCase()
+        .replace(/['"]/g, '')
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+}
+
+function initPageToc() {
+    const hero = document.querySelector('.page-hero');
+    if (!hero) {
+        return;
+    }
+
+    const sections = Array.from(document.querySelectorAll('.doc-section'));
+    const items = [];
+    const usedIds = new Set();
+
+    sections.forEach(section => {
+        const heading = section.querySelector('h2');
+        if (!heading) {
+            return;
+        }
+        const baseId = section.id || slugify(heading.textContent.trim());
+        if (!baseId) {
+            return;
+        }
+        let uniqueId = baseId;
+        let counter = 2;
+        while (usedIds.has(uniqueId)) {
+            uniqueId = `${baseId}-${counter}`;
+            counter += 1;
+        }
+        usedIds.add(uniqueId);
+        section.id = uniqueId;
+        items.push({ id: uniqueId, label: heading.textContent.trim() });
+    });
+
+    if (items.length < 2) {
+        return;
+    }
+
+    const toc = document.createElement('nav');
+    toc.className = 'page-toc';
+    toc.setAttribute('aria-label', 'On this page');
+
+    const card = document.createElement('div');
+    card.className = 'page-toc-card';
+
+    const title = document.createElement('div');
+    title.className = 'page-toc-title';
+    title.textContent = 'On this page';
+
+    const list = document.createElement('ul');
+    list.className = 'page-toc-list';
+
+    items.forEach(item => {
+        const li = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = `#${item.id}`;
+        link.textContent = item.label;
+        li.appendChild(link);
+        list.appendChild(li);
+    });
+
+    card.appendChild(title);
+    card.appendChild(list);
+    toc.appendChild(card);
+    hero.insertAdjacentElement('afterend', toc);
+}
+
 function initSearch() {
     const searchInput = document.getElementById('docSearch');
     const searchClear = document.getElementById('searchClear');
@@ -290,6 +361,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     document.body.classList.add('reveal');
     initSearch();
+    initPageToc();
     initReveal();
     updateActiveNav();
     highlightCodeBlocks();
